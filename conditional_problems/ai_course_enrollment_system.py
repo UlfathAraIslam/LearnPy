@@ -1,4 +1,4 @@
-skill = input("Enter skill level:").lower()
+skill = input("Enter skill level(beginner/intermediate/advance):").lower()
 age = input("Enter age:")
 
 if age.isdigit():
@@ -11,7 +11,5 @@ if age.isdigit():
         print("Enrollment Approved")
     elif age < 14:
         print("Enrollment Denied")
-    elif skill not in ["beginner","intermediate","advanced"]:
-        print("Invalid Input")
 else:
     print("Invalid number")

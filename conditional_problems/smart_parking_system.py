@@ -1,4 +1,4 @@
-vehicle = input("Enter vehicle type:").lower()
+vehicle = input("Enter vehicle type(bike/car/truck):").lower()
 parking_hours = input("Enter parking hours:")
 
 if parking_hours.isdigit():
