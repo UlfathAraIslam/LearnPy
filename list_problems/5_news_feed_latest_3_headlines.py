@@ -11,10 +11,11 @@
 headlines = ["headlines1","headlines2","New Ai Law Passed","Budget Cuts Announced","School Reform bill"]
 recent= headlines[-3:]
 total_headings = len(headlines)
+print(f"Total headlines: {total_headings} | Showing: {len(recent)}")
+
 if total_headings<3:
     print("Not enough news yet")
-
-print(f"Total headlines: {total_headings} | Showing: {len(recent)}")
-print("1.",recent[0].title())
-print("2.",recent[1].title())
-print("3.",recent[2].title()) 
+else:
+    print("1.",recent[0].title())
+    print("2.",recent[1].title())
+    print("3.",recent[2].title()) 
