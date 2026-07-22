@@ -27,64 +27,101 @@
 --print invalid transaction
 -use while loop with index to print history table
 '''
+# balance = 100000
+# transaction_types = []
+# transaction_amounts = []
+# deposit_count = 0
+# withdraw_count = 0
+# print(f"Opening Balance:{balance}")
+# while True:
+#     transaction = input("Enter transaction type (deposit/withdraw or 'done'):").upper()
+#     if transaction == "DONE":
+#         break
+#     amount = int(input("Enter amount:"))
+#     #deposit
+#     if transaction =="DEPOSIT":
+#         #increment
+#         balance +=amount
+#         #store in lists
+#         transaction_types.append(transaction)
+#         transaction_amounts.append(amount)
+#         #increase counter
+#         deposit_count += 1
+#     #withdraw
+#     elif transaction == "WITHDRAW":
+#         #check balance
+#         if amount >balance:
+#             print("Rejected: Insufficient balance")
+#         else:
+#             #decrement
+#             balance -= amount
+#             #store in lists
+#             transaction_types.append(transaction)
+#             transaction_amounts.append(amount)
+#             #increase counter
+#             withdraw_count += 1
+#     else:
+#         print("Invalid transaction type")
+# # print history
+# print("===================================")
+# print("TRANSACTION HISTORY")
+# print("===================================")
+# print("No. | Type | Amount | Balance")
+# print("------------------------------------")
+
+# running_balance = 100000
+# index = 0
+# # while loop for history
+# while index < len(transaction_types):
+#     current_type = transaction_types[index]
+#     current_amount = transaction_amounts[index]
+#     # deposit history
+#     if current_type == "DEPOSIT":
+#         running_balance += current_amount
+#         print(f"{index + 1} | {current_type} | +{current_amount} | {running_balance}")
+#     # withdraw history
+#     else:
+#         running_balance -= current_amount
+#         print(f"{index + 1} | {current_type} | -{current_amount} | {running_balance}")
+#     index += 1
+# print("------------------------------------")
+# print("Total Deposits:",deposit_count)
+# print("Total Withdrawals:",withdraw_count)
+# print("Closing Balance:",balance)
+
+
+##* 2nd method
+#---------------- data storing-----------
 balance = 100000
-transaction_types = []
-transaction_amounts = []
+types = []
+amounts = []
 deposit_count = 0
-withdraw_count = 0
-print(f"Opening Balance:{balance}")
+withdrawal_count = 0
+print("Opening Balance:",balance)
 while True:
-    transaction = input("Enter transaction type (deposit/withdraw or 'done'):").upper()
-    if transaction == "DONE":
+    t_type = input("Enter transaction type (deposit/withdraw or 'done')")
+    if t_type == "done":
         break
     amount = int(input("Enter amount:"))
-    #deposit
-    if transaction =="DEPOSIT":
-        #increment
-        balance +=amount
-        #store in lists
-        transaction_types.append(transaction)
-        transaction_amounts.append(amount)
-        #increase counter
-        deposit_count += 1
-    #withdraw
-    elif transaction == "WITHDRAW":
-        #check balance
-        if amount >balance:
-            print("Rejected: Insufficient balance")
-        else:
-            #decrement
-            balance -= amount
-            #store in lists
-            transaction_types.append(transaction)
-            transaction_amounts.append(amount)
-            #increase counter
-            withdraw_count += 1
+    t_type = t_type.upper()
+    if t_type == "WITHDRAW" and amount>balance:
+        print("'Rejected: Insufficient balance")
     else:
-        print("Invalid transaction type")
-# print history
-print("===================================")
+        types.append(t_type)
+        amount.append(amount)
+        if t_type== "DEPOSIT":
+            balance+= amount
+            deposit_count+=1
+        else:
+            balance -= amount
+            withdrawal_count+=1
+            
+#---------------data access------------
+print("============================================")
 print("TRANSACTION HISTORY")
-print("===================================")
+print("============================================")
 print("No. | Type | Amount | Balance")
-print("------------------------------------")
+print("============================================")
 
 running_balance = 100000
-index = 0
-# while loop for history
-while index < len(transaction_types):
-    current_type = transaction_types[index]
-    current_amount = transaction_amounts[index]
-    # deposit history
-    if current_type == "DEPOSIT":
-        running_balance += current_amount
-        print(f"{index + 1} | {current_type} | +{current_amount} | {running_balance}")
-    # withdraw history
-    else:
-        running_balance -= current_amount
-        print(f"{index + 1} | {current_type} | -{current_amount} | {running_balance}")
-    index += 1
-print("------------------------------------")
-print("Total Deposits:",deposit_count)
-print("Total Withdrawals:",withdraw_count)
-print("Closing Balance:",balance)
+i = 0
