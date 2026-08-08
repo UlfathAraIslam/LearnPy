@@ -17,5 +17,10 @@ class Microwave:
             else:
                 self.turned_on = True
                 print(f"Microwave ({self.brand} is already turned off.)")
+        def run(self,seconds: int) -> None:
+            if self.turned_on:
+                print(f"Running ({self.brand}) for {seconds} seconds")
+            else:
+                print(f"Turn on your microwave first")
 
 smeg: Microwave = Microwave(brand='Smeg',power_rating= 'B')
