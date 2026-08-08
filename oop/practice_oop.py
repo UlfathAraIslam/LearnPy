@@ -6,3 +6,7 @@ class Microwave:
 smeg: Microwave = Microwave(brand='Smeg',power_rating= 'B')
 print(smeg.brand)
 print(smeg.power_rating)
+
+bosch: Microwave = Microwave(brand='Bosch',power_rating="C")
+print(bosch.brand)
+print(bosch.power_rating)
