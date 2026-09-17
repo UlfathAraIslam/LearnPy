@@ -15,3 +15,8 @@ class Library:
         self.next_id += 1
         
         print(f"Book added: {book}")
+    
+    def view_books(self):
+        for book in self.books:
+            print(book)
+    
