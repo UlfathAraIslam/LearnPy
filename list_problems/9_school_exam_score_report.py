@@ -1,5 +1,4 @@
 #9
-#*TODO
 '''
 -start with Given scores = [[85, 90, 78], [92, 88, 95], [70, 75, 80]]
 -math scores[0,0]
