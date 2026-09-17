@@ -44,4 +44,11 @@ class Library:
                 print(f"Book returned: {book}")
                 return
         print("Book not found.")
-        
+    
+    def remove_book(self,book_id):
+        for book in self.books:
+            if book.book_id == book_id:
+                self.books.remove(book)
+                print(f"Book removed: {book}")
+                return
+        print("Book not found.")
