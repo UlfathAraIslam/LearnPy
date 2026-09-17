@@ -20,3 +20,10 @@ class Library:
         for book in self.books:
             print(book)
     
+    def search_book(self,book_id):
+        for book in self.books:
+            if book.book_id == book_id:
+                print(book)
+                return
+
+        print("Book not found")
