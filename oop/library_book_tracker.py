@@ -37,3 +37,11 @@ class Library:
                     print("Book is already issued.")
                 return
             print("Book not found.")
+    
+    def return_book(self,book_id):
+        for book in self.books:
+            if book.available == True:
+                print(f"Book returned: {book}")
+                return
+        print("Book not found.")
+        
