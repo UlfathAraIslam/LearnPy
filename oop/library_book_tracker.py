@@ -27,3 +27,13 @@ class Library:
                 return
 
         print("Book not found")
+
+    def issue_book(self,book_id):
+        for book in self.books:
+            if book.book_id == book_id:
+                if book.available == False:
+                    print(f"Book issued: {book}")
+                else:
+                    print("Book is already issued.")
+                return
+            print("Book not found.")
