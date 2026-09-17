@@ -1,10 +1,11 @@
 class Book:
     def __init__(self,book_id,title,author,available=True):
+        self.book_id = book_id
         self.title = title
         self.author = author
         self.available = available
     def __str__(self):
-        return f"ID: {self.book_id}, Title: {self.title}, Author: {self.author}, Available: {self.available}"
+        return f"ID: {self.book_id} | Title: {self.title} | Author: {self.author} | Available: {self.available}"
 class Library:
     def __init__(self):
         self.books = []
@@ -14,7 +15,7 @@ class Library:
         self.books.append(book)
         self.next_id += 1
         
-        print(f"Book added: {book}")
+        print(f"Book added successfully!")
     
     def view_books(self):
         for book in self.books:
@@ -32,7 +33,7 @@ class Library:
         for book in self.books:
             if book.book_id == book_id:
                 if book.available == False:
-                    print(f"Book issued: {book}")
+                    print(f"Book issued successfully!")
                 else:
                     print("Book is already issued.")
                 return
@@ -41,7 +42,7 @@ class Library:
     def return_book(self,book_id):
         for book in self.books:
             if book.available == True:
-                print(f"Book returned: {book}")
+                print(f"Book returned successfully!")
                 return
         print("Book not found.")
     
@@ -49,6 +50,19 @@ class Library:
         for book in self.books:
             if book.book_id == book_id:
                 self.books.remove(book)
-                print(f"Book removed: {book}")
+                print(f"Book removed successfully!")
                 return
         print("Book not found.")
+library = Library()
+library.add_book("Python Crash Course", "Eric Matthes")
+library.add_book("Atomic Habits", "James Clear")
+library.add_book("Deep Work", "Cal Newport")
+library.view_books()
+print("\n-- Issue --")
+library.issue_book(1)
+library.view_books()
+print("\n-- Return --")
+library.return_book(1)
+print("\n-- Remove --")
+library.remove_book(2)
+library.view_books()
