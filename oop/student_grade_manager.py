@@ -43,3 +43,16 @@ class GradeBook:
                 print("Student removed successfully.")
                 return
         print("Student not found.")
+# test
+gradebook = GradeBook()
+gradebook.add_student("Tanvir", "A", "tanvir@email.com")
+gradebook.add_student("Nusrat", "B+")
+gradebook.add_student("Rakib", "A-", "rakib@email.com")
+gradebook.view_students()
+print("\n-- Search --")
+gradebook.search_student(2)
+print("\n-- Update --")
+gradebook.update_grade(3, "A")
+print("\n-- Delete --")
+gradebook.delete_student(2)
+gradebook.view_students()
