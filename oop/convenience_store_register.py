@@ -6,3 +6,10 @@ class Product:
         print(f"Scanned: {self.name} - {self.price}")
         return self.price
 
+class Register:
+    def __init__(self):
+        self.total = 0
+    def checkout(self,products):
+        for p in products:
+            self.total += p.scan()
+        print(f"Total: ¥{self.total}")
