@@ -13,3 +13,17 @@ class Register:
         for p in products:
             self.total += p.scan()
         print(f"Total: ¥{self.total}")
+
+def main():
+    count= int(input("How many products? "))
+    cart = []
+    
+    for _ in range(count):
+        name = input("Product name: ")
+        price = int(input("Price: "))
+        cart.append(Product(name,price))
+    register = Register()
+    register.checkout(cart)
+
+if __name__ == "__main__":
+    main()
