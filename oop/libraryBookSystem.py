@@ -29,3 +29,30 @@ class Library:
             if b.title == title:
                 return b
         return None
+def main():
+    library = Library()
+    count = int(input("How many books do you want to add? "))
+    for _ in range(count):
+        title = input("Book title: ")
+        author = input("Author: ")
+        library.add_book(Book(title, author))
+
+    while True:
+        action = input("Action (borrow/return/done): ")
+        if action == "done":
+            break
+        title = input("Enter book title: ")
+        book = library.find_book(title)
+        if book is None:
+            print(f'"{title}" not found in library.')
+            continue
+        if action == "borrow":
+            book.borrow()
+        elif action == "return":
+            book.return_book()
+        else:
+            print("Unknown action, skipping.")
+
+
+if __name__ == "__main__":
+    main()
