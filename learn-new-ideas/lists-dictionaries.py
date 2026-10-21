@@ -7,3 +7,7 @@ person = {"name": "Rina","city": "Osaka"}
 print(person["city"])
 person["age"]= 24
 print(person.get("phone", "none"))
+
+fruits = ["apple","banana","mango"]
+for index, fruit in enumerate(fruits):
+    print(index,fruit)
