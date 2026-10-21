@@ -11,3 +11,6 @@ print(person.get("phone", "none"))
 fruits = ["apple","banana","mango"]
 for index, fruit in enumerate(fruits):
     print(index,fruit)
+removed = fruits.pop(1)
+print(removed)
+print(fruits)
